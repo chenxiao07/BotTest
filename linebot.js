@@ -53,6 +53,6 @@ var sslOptions = {
   passphrase: 'sxhctycgr-'
 };
 
-var secureServer = https.createServer(sslOptions, bot).listen('3030', function () {
+var secureServer = https.createServer(sslOptions, app).listen('3030', function () {
   console.log("Secure server listening on port 3030");
 });
