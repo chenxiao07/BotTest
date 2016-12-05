@@ -6,7 +6,11 @@ var request = require('request');
 
 var app = express();
 app.use(bodyParser.urlencoded({extended: true}));  // JSONの送信を許可
-app.use(bodyParser.json());        
+app.use(bodyParser.json());     
+
+app.get('/', function(req, res){
+	res.send("It works");
+});   
 
 app.post('/callback', function(req, res){
 
