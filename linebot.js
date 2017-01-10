@@ -12,11 +12,50 @@ app.get('/', function(req, res){
 	res.send("It works");
 });   
 
-app.post('/callback', function(req, res){
+app.post('/qrchan', function(req, res){
 
   for(var e of req.body.events)
   {
   	var headers = {
+      'Content-Type' : 'application/json; charset=UTF-8',
+      'Authorization' : 'Bearer P5pLeFX5jRoU9l9NNGPDDbceTn92PiKdIb/rrB9U6ecfQKTT67W2q5GCnEgH66whzuxb3yzfbLdecax3sMtzWkBY9cYBmt+NvU7DfOJ19rEFI0Mz5vtGabhp0EanclclCgMvvZT9ydvHnYl0JDKvWwdB04t89/1O/w1cDnyilFU='
+    };
+  
+    // 送信データ作成
+    var data = {
+      "replyToken": e.replyToken,
+      "messages": [
+        {
+          "type": 'text',
+          "text": 'Hello world',
+        }
+      ]
+    };
+  
+    //オプションを定義
+    var options = {
+      url: 'https://api.line.me/v2/bot/message/reply',
+      proxy : process.env.FIXIE_URL,
+      headers: headers,
+      json: true,
+      body: data
+    };
+  
+    request.post(options, function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        console.log(body);
+      } else {
+        console.log('error: '+ JSON.stringify(response));
+      }
+    });
+  }
+});
+
+app.post('/worddic', function(req, res){
+
+  for(var e of req.body.events)
+  {
+    var headers = {
       'Content-Type' : 'application/json; charset=UTF-8',
       'Authorization' : 'Bearer P5pLeFX5jRoU9l9NNGPDDbceTn92PiKdIb/rrB9U6ecfQKTT67W2q5GCnEgH66whzuxb3yzfbLdecax3sMtzWkBY9cYBmt+NvU7DfOJ19rEFI0Mz5vtGabhp0EanclclCgMvvZT9ydvHnYl0JDKvWwdB04t89/1O/w1cDnyilFU='
     };
