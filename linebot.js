@@ -18,7 +18,7 @@ app.post('/qrchan', function(req, res){
   {
   	var headers = {
       'Content-Type' : 'application/json; charset=UTF-8',
-      'Authorization' : 'Bearer P5pLeFX5jRoU9l9NNGPDDbceTn92PiKdIb/rrB9U6ecfQKTT67W2q5GCnEgH66whzuxb3yzfbLdecax3sMtzWkBY9cYBmt+NvU7DfOJ19rEFI0Mz5vtGabhp0EanclclCgMvvZT9ydvHnYl0JDKvWwdB04t89/1O/w1cDnyilFU='
+      'Authorization' : 'Bearer BHuL0QX6wYZCWCsuwHlQe4ouD7MR7FFnvAXAYDXwSrrvEtyLYLZnt1EGDN514jXlANtlnz3ILedOOIZumZYeC00M9qmHX2fKHyC6mspLmNn85wc02lh3mqmrveFB38NG6JK4BssfrO1iz9rqL24fgwdB04t89/1O/w1cDnyilFU='
     };
   
     // 送信データ作成
