@@ -2,12 +2,9 @@
   "name": "LineBot",
   "main": "linebot.js",
   "dependencies": {
-    "@3846masa/linebot": "^0.2.0",
     "body-parser": "*",
     "express": "*",
-    "request": "*"
-  },
-  "devDependencies": {
-    "@types/node": "0.0.2"
+    "request": "*",
+    "qrcode": "*"
   }
 }
