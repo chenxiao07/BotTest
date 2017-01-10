@@ -6,6 +6,7 @@
     "express": "*",
     "request": "*",
     "jsqrcode": "*",
+    "canvas": "*",
     "qrcode": "*"
   }
 }

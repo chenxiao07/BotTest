@@ -29,11 +29,6 @@ app.post('/qrchan', function(req, res){
       'Authorization' : 'Bearer BHuL0QX6wYZCWCsuwHlQe4ouD7MR7FFnvAXAYDXwSrrvEtyLYLZnt1EGDN514jXlANtlnz3ILedOOIZumZYeC00M9qmHX2fKHyC6mspLmNn85wc02lh3mqmrveFB38NG6JK4BssfrO1iz9rqL24fgwdB04t89/1O/w1cDnyilFU='
     };
 
-    var text = e.message.text;
-    var hash = crypto.createHash('md5').update(text).digest('hex');
-    var fileName = hash + ".png";
-    var path = "/var/www/bot/"+fileName;
-
     if (e.message.type == "image")
     {
       var image = new Image();
@@ -64,6 +59,11 @@ app.post('/qrchan', function(req, res){
     }
     else
     {
+      var text = e.message.text;
+      var hash = crypto.createHash('md5').update(text).digest('hex');
+      var fileName = hash + ".png";
+      var path = "/var/www/bot/"+fileName;
+    
       if (fs.existsSync(path)) {
         // 送信データ作成
         var data = {
